@@ -1,23 +1,18 @@
 <html>
     <head>
-        <title>Django Girls blog</title>
+        <title>EJD blog</title>
     </head>
     <body>
         <div>
-            <h1><a href="/">EJD First Blog</a></h1>
+            <h1><a href="/">Django Girls Blog</a></h1>
         </div>
 
-        <div>
-        	<h2>This is the most important blog</h2>
-        	<h3>that you can find online</h3>
-        	<h4>so pay close attention</h4>
-        	<h5>!</h5>
-        </div>
-        <div>
-            <p>published: 24.04.2020, 12:14</p>
-            <h2><a href="">My first post - COVID Times</a></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod at massa ac lobortis. Nunc vitae semper erat, quis ullamcorper augue. Cras nec dolor posuere, bibendum neque condimentum, malesuada metus. Aenean pretium velit in orci rhoncus, at posuere sapien venenatis. In gravida vitae ipsum sed blandit. Etiam egestas turpis ac quam condimentum, quis commodo enim luctus. Mauris mattis varius enim, at malesuada neque finibus sit amet. Mauris id dignissim massa, eget rutrum risus. Donec venenatis nulla ac ipsum consequat mollis. Suspendisse dictum neque et tellus porttitor, pulvinar scelerisque risus mollis. Quisque nec commodo libero, ut accumsan quam. Duis et erat nunc. Cras tristique hendrerit turpis sit amet pulvinar. Curabitur luctus lectus eu augue tristique, eget mattis neque cursus. Ut at suscipit ligula. Cras fermentum tempor bibendum.</p>
-        </div>
-
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
